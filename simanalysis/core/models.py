@@ -20,8 +20,15 @@ class H5FileGroup:
         _repr = f"Directory:\r\r{self.directory}\r"
 
         _repr += "Files included in group:\r\r"
-        for p in self.paths:
-            _repr += f"\t- {p}\n"
+        for i, p in enumerate(self.paths):
+            if i == 30:
+                _repr += "\t- -------------\n\n"
+            elif 30 < i < len(self.paths):
+                pass
+            elif i == len(self.paths):
+                _repr += f"\t- {p}\n"
+            else:
+                _repr += f"\t- {p}\n"
 
         return _repr
 
